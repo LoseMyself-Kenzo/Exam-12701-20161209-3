@@ -8,7 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h4>显示File列表</h4>
+	<h1>显示File列表</h4>
+	<h2><span style="color: red">点击编辑，对该数据进行编辑</span></br><span style="color: red">点击删除，直接删除该数据.请确认无误后再点删除</span></h2>
 	<form>
 		<table border="1">
 			<tr>

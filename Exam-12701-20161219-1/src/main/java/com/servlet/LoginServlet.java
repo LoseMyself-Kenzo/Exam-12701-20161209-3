@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 		}
 
 		if (message == null) {
-			req.setAttribute("LOGIN_USER", userName);
+			req.getSession().setAttribute("LOGIN_USER", userName);
 			req.getRequestDispatcher("index.jsp").forward(req, res);
 		} else {
 			req.setAttribute("message", message);

@@ -82,10 +82,20 @@ public class FilmDAOImpl implements FilmDAO {
 			dbConn = DBConnection.getInstance();
 			conn = dbConn.getConnection();
 			String sql = "delete from film where film_id = ?";
+			String sql1 = "SET FOREIGN_KEY_CHECKS=0;";
+			String sql2 = "SET FOREIGN_KEY_CHECKS=1;";
+			pstmt = conn.prepareStatement(sql1);
+			pstmt.executeUpdate();
+			int count = -1;
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, film_id);
-			int count = pstmt.executeUpdate();
-			bool = count > 0;
+			count = pstmt.executeUpdate();
+
+			pstmt = conn.prepareStatement(sql2);
+			pstmt.executeUpdate();
+			
+			count = pstmt.executeUpdate();
+			bool = count >= 0;
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new RuntimeException(e);

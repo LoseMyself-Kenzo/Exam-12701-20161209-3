@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
+	pageEncoding="utf-8" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +14,7 @@
 	</c:if>
 	
 	<c:if test="${!empty LOGIN_USER}">
-		<%=request.getAttribute("LOGIN_USER")%>,你好.欢迎使用本系统.<br/>
+		${LOGIN_USER},你好.欢迎使用本系统.<br/>
 		请选择你要使用的功能：<br/>
 		<a href="showFilm">显示所有Film</a><br/>
 		<a href="add.jsp">新增Film信息</a><br/>

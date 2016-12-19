@@ -8,7 +8,7 @@
 <title>编辑信息</title>
 </head>
 <body>
-	编辑信息
+	<h2>当前正在编辑的是Film_id为  ${param.id} 的电影信息.请确认编辑对象正确再进行修改.</h2></br>
 	<form action="editServlet">
 		<table border="1">
 			<tr>
